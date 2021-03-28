@@ -26,7 +26,7 @@ for i in range(noQs):
             print('correct!')
             correctAnswers += 1
         else:
-            print('nope the correct answer is ' + str(result))
+            print('nope, the correct answer is ' + str(result))
     except ip.TimeoutException:  # exceptions are in the pyinputplus module
         print('too slow... the answer is ' + str(num1*num2))
     except ip.TimeoutException:

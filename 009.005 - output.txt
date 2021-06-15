@@ -1,0 +1,1 @@
+dict_items([('.py', 40), ('.txt', 1), ('.pyw', 1), ('.bak', 1), ('.dat', 1), ('.dir', 1), ('sub-folder', 4)])

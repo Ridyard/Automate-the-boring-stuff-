@@ -3,8 +3,9 @@
 
 from pathlib import Path
 
-print('cwd is ' + str(Path.cwd()))
 p = Path.cwd()
+print('cwd is ' + str(p))
+
 
 
 # this function returns / prints all .py files in cwd

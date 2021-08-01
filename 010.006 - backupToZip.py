@@ -24,12 +24,12 @@ def backupToZip(folder):
 
     # to do - walk entire folder tree and compress the files in each folder
     for foldername, subfolders, filenames in os.walk(folder): # each iter through the loop will return the iteration's current folder, subfolders & files in the folder
-        print(f'adding files from \"{foldername}\" to the zip archive\n')
+        print(f'adding files from \n\"{foldername}\" to the zip archive\n')
         backupZip.write(foldername) # add current folder to the zip
         for filename in filenames:
             newBase = os.path.basename(folder) + '_'
             if filename.startswith(newBase) and filename.endswith('.zip'):
-                continue # don't back up any existing zip file
+                continue # don't back up any existing zip file to the new archive
             backupZip.write(os.path.join(foldername, filename))
     backupZip.close()
     

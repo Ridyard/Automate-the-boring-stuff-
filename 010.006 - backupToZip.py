@@ -9,7 +9,7 @@ from pathlib import Path
 def backupToZip(folder):
     #backup the entire contents of a folder to a zipfile
     folder = os.path.abspath(folder)
-    print(f'target filepath is {folder}\n')
+    print(f'this script will backup all items at the filepath: \n{folder}\n')
     n = 1
     while True:
         zipFilename = os.path.basename(folder) + '_' + str(n) + '.zip'
@@ -24,7 +24,7 @@ def backupToZip(folder):
 
     # to do - walk entire folder tree and compress the files in each folder
     for foldername, subfolders, filenames in os.walk(folder): # each iter through the loop will return the iteration's current folder, subfolders & files in the folder
-        print(f'adding files from \"{foldername}\" to the zip archive')
+        print(f'adding files from \"{foldername}\" to the zip archive\n')
         backupZip.write(foldername) # add current folder to the zip
         for filename in filenames:
             newBase = os.path.basename(folder) + '_'

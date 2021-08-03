@@ -11,8 +11,8 @@ from pathlib import Path
 home = Path.home()
 print(home)
 
-biggies = []
-errors = []
+biggies = [] # to hold large files
+errors = [] # to hold misc error files
 
 for root, subs, files in os.walk(home): # walk the home directory
     for file in files:

@@ -1,38 +1,26 @@
-# atbs - practice project
-# fantasy game inventory
+# atbs - fantasy game inventry
+
+inv = {'rope':1, 'torch':6, 'gold coin':42, 'dagger':1, 'arrow':12}
+loot = ['gold coin', 'gold coin', 'ruby', 'dragon scale', 'dragon scale', 'arrow']
 
 
-def displayInvent(inventory):
-    print('inventory:')
+def displayInventory(inv):
     itemTotal = 0
-    for k, v in inventory.items():
-        print(str(v) + ' ' + k)
+    print('inventory:')
+    for k,v in inv.items():
+        print(v,k)
         itemTotal += v
-    print('total number of items: ' + str(itemTotal))
+    print(f'total number of items {itemTotal} \n')
 
-def addInvent(inventory, dragonLoot):
-    addItems = {}
-    for item in dragonLoot:     # add dragonLoot list items to a dict
-        addItems.setdefault(item, 0)
-        addItems[item] +=1
-        print(item + ' collected')
-    print(addItems)
+
+def addToInventory(inv, loot):
+    for i in loot:
+        inv.setdefault(i, 0) # if i not currently in inv, then we add & set default to 0
+        inv[i] +=1           # we then increment
+        print(f'collected {i}!')
     print()
-    
-    for k, v in addItems.items():   # add new dragonLoot dict items to existing inventory 
-        inventory.setdefault(k, 0)
-        inventory[k] += v
-        print(str(v) + 'x ' + k + ' added to inventory')
-    print(inventory)
-    print()
-    return inventory
 
 
-
-inventory = {'dagger': 1, 'rope': 3, 'gold coin': 42, 'arrow': 12, 'torch': 3}
-displayInvent(inventory)
-print()
-
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addInvent(inventory, dragonLoot)
-displayInvent(inv)        
+displayInventory(inv)
+addToInventory(inv, loot)
+displayInventory(inv)

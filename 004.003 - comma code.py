@@ -1,34 +1,22 @@
-# ATBS, chapter 4 - lists
+# atbs - comma code: take a list of strings and return a comma separated string with AND inserted before final item
 
-# practice question 1
-#comma code - function takes a given list and returns a string with correct comma separated grammar
+words = ['cat', 'dog', 'monkey', 'chicken']
 
-grammarList = ['cats','dogs','fish','racoons','monkeys']
-
-def grammar(gl):
-    print(gl)
-    
-    gl = ', '.join(gl)             # add commas with join, which returns a string
-    print(gl)
-    
-    gl = gl.split()                 # split the string of words into a list
-    print(gl)
-
-    x = gl[-2]                      # pull the penultimate word from the list and remove the trailing comma
-    print(x)
-    gl[-2] = x[:-1]             # re-add the penultimate list item, with the comma removed
-    print(gl)
-    
-    gl.insert(-1, 'and')
-    print(gl)
-
-    
-    print(' '.join(gl))
-    
-
-    
-    
+# method 1
+def comma1(words):
+    for i in range(len(words)-2):
+        print(words[i], end=', ')
+    print(words[-2] + ' & ' + words[-1])
 
 
+# method 2
+def comma2(words):
+    sentence = ', '.join(words[:-1])
+    sentence += ' & ' + words[-1]
+    print(sentence)
 
-grammar(grammarList)
+
+comma1(words)
+comma2(words)
+
+

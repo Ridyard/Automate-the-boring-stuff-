@@ -32,7 +32,7 @@ def startQuiz(numQuestions, l, t, score):
     
     # output block based on the user's end scoreline
     print(f"\nyou scored {score}/10!")
-    responseTime = round(responseTime, 2)
+    responseTime = round((responseTime/10), 2)
     print(f"your average time per question was {responseTime} seconds")
     if score <5:
         print('better luck next time...\n')

@@ -11,7 +11,7 @@ if fileType.startswith('.'): # remove any leading '.' from the filetype; standar
     fileType = fileType[1:]
 
 if filePath == '':
-    filePath = Path.cwd() # if file path is ommitted, use cwd
+    filePath = Path.cwd() # if file path is omitted, use cwd
 else:
     filePath = Path(filePath) # otherwise use the user selected path
 

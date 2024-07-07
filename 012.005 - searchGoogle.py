@@ -1,6 +1,6 @@
 #! python3
 # script to search a topic and open the search result links in separate tabs
-# take a string from the cmd argument and search on the pypi project resource
+# take a string from the cmd argument and carries out a Google search; opening the top 5 search result links
 
 import bs4, requests, sys, webbrowser, random
 
@@ -23,6 +23,7 @@ res.raise_for_status()
 
 # retrieve top search result links
 soup = bs4.BeautifulSoup(res.text, 'html.parser')
+
 # Find all <a> tags with the attribute jsname="UWckNb"
 linkElements = soup.find_all('a', attrs={'jsname': 'UWckNb'})
 
@@ -38,6 +39,3 @@ for i in range(numOpen):
     webbrowser.open(urlToOpen)
     
 print('end')
-# https://pypi.org/search/?q=
-# mr robot
-#<a jsname="UWckNb" href="https://www.imdb.com/title/tt4158110/" data-ved="2ahUKEwj55vjgnpWHAxWVU0EAHYcDAekQFnoECGkQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Mr. Robot (TV Series 2015–2019)</h3><div class="notranslate HGLrXd NJjxre iUh30 ojE3Fb"><div class="q0vns"><span class="DDKf1c"><div class="eqA2re UnOTSe Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJC4xJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3NTU3Nzc1Nzc3Nzc3Nzc1LTUyKzUwNTU3Nzc3NTUxLS04Ny00NTU1NTgtNTU3Nv/AABEIABwAHAMBEQACEQEDEQH/xAAaAAACAgMAAAAAAAAAAAAAAAAABgQFAQMH/8QAJBAAAgEDAwQDAQAAAAAAAAAAAQIDAAQRBQYxEhMhQUNRkSL/xAAbAQABBQEBAAAAAAAAAAAAAAAAAQIDBAUHBv/EACYRAAIBAwIFBQEAAAAAAAAAAAABEQIDBDFRBRIhodETImHB4RX/2gAMAwEAAhEDEQA/AHmuaG+FAgUAFJICpvnWb7SXshYTCPuwXjvlFbJjgZ05HpgDWzwrFtZCr9RTDXdlbIuVURyik28txiC6Z7gRvb2eCe0nmcSxBmHjjpkFar4ZiSmlq+0PwVlkXCyj3hqtlOWumF5DbPfLKuFjaRYmUKcgcjJ4xmq9XDLFxNULlb5Y+JkesipPq51OiIwdFceAwB815yqmKmti+uqkh6npFhqpjN/AJe2sip/TDAdSrcH2CRU1jKvY8q24n6GVW6a9SLPtfRZ0dJbFWV1KsO4wyCUJ9/caflSriWVTHu0/fI12LexrfaWhPCsTWOUXr+V8nrILZOcnOBzTv6eUnPN22E9C3sXYAAAAwAMAVQbbcsm06IzQAUAFABQB/9k=" style="height:26px;width:26px" alt="" data-csiid="rLOKZvngK5WnhbIPh4eEyA4_35" data-atf="4"></div></span><div class="CA5RN"><div><span class="VuuXrf">IMDb</span></div><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://www.imdb.com<span class="ylgVCe ob9lvb" role="text"> › title</span></cite></div></div></div></div></a>
